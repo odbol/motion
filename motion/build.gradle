@@ -1,16 +1,16 @@
 apply plugin: 'com.android.library'
-apply plugin: 'maven'
-apply plugin: 'de.mobilej.unmock'
+//apply plugin: 'maven'
+//apply plugin: 'de.mobilej.unmock'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion '22.0.1'
+    buildToolsVersion "23.0.3"
 
     defaultConfig {
-        minSdkVersion 9
+        minSdkVersion 21
         targetSdkVersion 23
-        versionCode Integer.parseInt(project.VERSION_CODE)
-        versionName project.VERSION_NAME
+        versionCode 1//Integer.parseInt(project.VERSION_CODE)
+        versionName "1"//project.VERSION_NAME
     }
     buildTypes {
         release {
@@ -23,19 +23,19 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
-    compile 'com.android.support:support-annotations:23.0.1'
+    compile 'com.android.support:support-annotations:23.3.0'
 
     testCompile 'junit:junit:4.12'
     testCompile 'org.mockito:mockito-core:1.9.5'
 }
 
-unMock {
-    allAndroid = 'https://oss.sonatype.org/content/groups/public/org/robolectric/android-all/5.0.0_r2-robolectric-1/android-all-5.0.0_r2-robolectric-1.jar'
+//unMock {
+//    allAndroid = 'https://oss.sonatype.org/content/groups/public/org/robolectric/android-all/5.0.0_r2-robolectric-1/android-all-5.0.0_r2-robolectric-1.jar'
+//
+//    keep = [
+//            "android.hardware.SensorEvent",
+//            "android.hardware.SensorManager",
+//    ]
+//}
 
-    keep = [
-            "android.hardware.SensorEvent",
-            "android.hardware.SensorManager",
-    ]
-}
-
-apply from: 'https://raw.githubusercontent.com/chrisbanes/gradle-mvn-push/master/gradle-mvn-push.gradle'
+//apply from: 'https://raw.githubusercontent.com/chrisbanes/gradle-mvn-push/master/gradle-mvn-push.gradle'
